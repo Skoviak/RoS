@@ -1,0 +1,30 @@
+{
+  "name": "RoS",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test" : "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "map-reverse": "^1.0.1",
+    "mongodb": "^3.5.4",
+    "monk": "^7.1.2",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2"
+  },
+  "description": "reprieve of sound initial",
+  "main": "app.js",
+  "author": "CarbonSocrates",
+  "license": "MIT"
+}

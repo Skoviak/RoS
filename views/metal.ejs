@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <%
+        var list = '';
+        for (i = 0; i < albums.length; i++) {
+          list += "<div class='album_cover' id='1'> <img id='image_id' src='cover_path' width='200' height='200'> <p class='title'>" + albums[i].artist + " <br>" + albums[i].title + "</p> </div>";
+        }
+      %>
+      <%- list %>
+    </ul>
+  </body>
+</html>

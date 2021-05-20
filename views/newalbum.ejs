@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Album</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form id="form_add_album" name="add_album" method="post" action="/music/insertalbum">
+      <input id="input_album_title" type="text" placeholder="album title" name="album_title" />
+      <input id="input_album_release_year" type="text" placeholder="release year" name="album_release_year" />
+      <button id="btn_submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
