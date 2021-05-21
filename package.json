@@ -4,24 +4,40 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test" : "nodemon ./bin/www"
+    "test": "nodemon ./bin/www",
+    "lint": "eslint ."
   },
   "dependencies": {
+    "babel-preset-env": "1.6.1",
+    "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "1.10.1",
     "http-errors": "~1.6.3",
     "map-reverse": "^1.0.1",
     "mongodb": "^3.5.4",
+    "mongoose": "5.0.4",
     "monk": "^7.1.2",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "passport-local-mongoose": "4.0.0",
+    "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.26.0",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jest": "20.0.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^27.0.0-next.10",
+    "supertest": "3.0.0"
   },
   "description": "reprieve of sound initial",
   "main": "app.js",

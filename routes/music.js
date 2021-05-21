@@ -1,49 +1,49 @@
 const express = require('express');
+
 const router = express.Router();
 
 /* GET music listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => { // eslint-disable-line
   res.send('Display a list of genres here eventually.');
 });
 
 /* GET metal page. */
-router.get('/metal', function(req, res, next) {
-  var db = req.db; //db variable which is defined in app.js
-  var collection = db.get('albums');
-  collection.find({},{},function(e,docs){
-      res.render('metal', { 
-        "albums" : docs, 
-        title: 'Metal' 
+router.get('/metal', (req, res, next) => { // eslint-disable-line
+  const { db } = req; // db variable which is defined in app.js
+  const collection = db.get('albums');
+  collection.find({}, {}, (e, docs) => {
+    res.render('metal', {
+      albums: docs,
+      title: 'Metal',
     });
   });
 });
 
 /* GET New Album page. */
-router.get('/newalbum', function(req, res) {
+router.get('/newalbum', (req, res) => {
   res.render('newalbum', { title: 'Add New Album' });
 });
 
 /* POST album. */
-router.post('/insertalbum', function(req, res){
-  var db = req.db;
-  var collection = db.get('albums');
+router.post('/insertalbum', (req, res) => {
+  const { db } = req;
+  const collection = db.get('albums');
 
-  var album_title = req.body.album_title;
-  var album_release_year = req.body.album_release_year;
+  const { album_title } = req.body;
+  const { album_release_year } = req.body;
 
   // Submit to the DB
   collection.insert({
-      "title" : album_title,
-      "release_year" : album_release_year
-  }, function (err, doc) {
-      if (err) {
-          // If it failed, return error
-          res.send("There was a problem adding the information to the database.");
-      }
-      else {
-          // And forward to success page
-          res.redirect("metal");
-      }
+    title: album_title,
+    release_year: album_release_year,
+  }, (err) => {
+    if (err) {
+      // If it failed, return error
+      res.send('There was a problem adding the information to the database.');
+    } else {
+      // And forward to success page
+      res.redirect('metal');
+    }
   });
 });
 
